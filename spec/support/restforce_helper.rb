@@ -20,8 +20,8 @@ module RestforceHelper
         'POS_Country__c' => 'Germany',
         'POS_State__c' => 'Berlin',
         'POS_Phone__c' => '123456789',
-        'Dealer_Latitude__c' => '52.5373',
-        'Dealer_Longitude__c' => '13.3603'
+        'Dealer_Latitude__c' => 52.5373,
+        'Dealer_Longitude__c' => 13.3603
       },
       {
         'Id' => '2222',
@@ -32,8 +32,8 @@ module RestforceHelper
         'POS_Country__c' => 'Germany',
         'POS_State__c' => 'Berlin',
         'POS_Phone__c' => '123456789',
-        'Dealer_Latitude__c' => '52.5079',
-        'Dealer_Longitude__c' => '13.3378'
+        'Dealer_Latitude__c' => 52.5079,
+        'Dealer_Longitude__c' => 13.3378
       }
     ]
   end
