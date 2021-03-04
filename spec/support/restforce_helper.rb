@@ -37,4 +37,11 @@ module RestforceHelper
       }
     ]
   end
+
+  def get_grouped_restforce_collection
+    get_restforce_collection.reduce({}) do |memo, record|
+      memo[record.Id] = record
+      memo
+    end
+  end
 end

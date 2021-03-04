@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
 Fabricator(:dealer) do
-  salesforce_account_id "MyString"
-  name                  "MyString"
-  pos_street            "MyString"
-  pos_city              "MyString"
-  pos_zip               "MyString"
-  pos_country           "MyString"
-  pos_state             "MyString"
-  pos_phone             "MyString"
-  location_latitude     1.5
-  location_longitude    1.5
-  created_at            "2021-03-04 08:41:25"
-  updated_at            "2021-03-04 08:41:25"
+  salesforce_account_id '1111'
+  name                  'Test Account 1'
+  pos_street            'Mitte'
+  pos_city              'Berlin'
+  pos_zip               '10999'
+  pos_country           'Germany'
+  pos_state             'Berlin'
+  pos_phone             '123456789'
+  location_latitude     52.5373
+  location_longitude    13.3603
 end
