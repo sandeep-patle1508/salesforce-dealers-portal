@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: salesforce_dealers_portal_development
+
+test:
+  <<: *default
+  database: salesforce_dealers_portal_test
+
+production:
+  <<: *default
+  database: salesforce_dealers_portal_production
+  username: salesforce_dealers_portal
+  password: <%= ENV['SALESFORCE_DEALERS_PORTAL_DATABASE_PASSWORD'] %>
