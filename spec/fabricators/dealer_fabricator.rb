@@ -1,5 +1,6 @@
+# frozen_string_literal: true
+
 Fabricator(:dealer) do
-  id                    1
   salesforce_account_id "MyString"
   name                  "MyString"
   pos_street            "MyString"
