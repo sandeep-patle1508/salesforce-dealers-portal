@@ -7,7 +7,7 @@ RSpec.describe Salesforce::ApiClient do
 
   let(:restforce) { instance_double(Restforce::Data::Client) }
   let(:collection) { get_restforce_collection }
-  let(:sql) { 'SELECT Id from Account'}
+  let(:sql) { 'SELECT Id from Account' }
 
   before do
     allow(Restforce).
