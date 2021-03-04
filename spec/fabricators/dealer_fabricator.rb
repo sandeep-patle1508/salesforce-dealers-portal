@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Fabricator(:dealer) do
-  account_id '1111'
+  account_id            '1111'
   name                  'Test Account 1'
   pos_street            'Mitte'
   pos_city              'Berlin'
