@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_072602) do
   enable_extension "plpgsql"
 
   create_table "dealers", force: :cascade do |t|
-    t.string "salesforce_account_id", null: false
+    t.string "account_id", null: false
     t.string "name", null: false
     t.string "pos_street"
     t.string "pos_city"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_072602) do
     t.float "location_longitude", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["salesforce_account_id"], name: "index_dealers_on_salesforce_account_id"
+    t.index ["account_id"], name: "index_dealers_on_account_id", unique: true
   end
 
 end
