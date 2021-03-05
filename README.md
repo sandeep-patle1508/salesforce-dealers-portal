@@ -55,6 +55,11 @@ git clone git@github.com:sandeep-patle1508/salesforce-dealers-portal.git
 cd salesforce-dealers-portal
 bundle install
 yarn install
+```
+
+Set .env file with database host, username and password.
+
+```sh
 rails db:create
 rails db:migrate
 ```
