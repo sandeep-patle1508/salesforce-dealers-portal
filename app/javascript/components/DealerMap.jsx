@@ -7,7 +7,19 @@ const MarkerComponent = ({ text }) => <div>{text}</div>;
 const DealerMap = ({ dealers }) => {
   const [center, setCenter] = useState({lat: 51.1657, lng: 10.4515 });
   const [zoom, setZoom] = useState(6);
-  return (
+
+  let dealersWithLoc = dealers.filter(function(dealer) {
+    let lat = dealer.attributes.location_latitude;
+    let long = dealer.attributes.location_longitude;
+
+    if(lat !== null && lat !== '' && long !== null && long !== ''){
+      return true;
+    }
+
+    return false;
+  });
+
+    return (
     <div className="col-lg-6 col-sm-12 border h-25 d-inline-block">
       <div style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
