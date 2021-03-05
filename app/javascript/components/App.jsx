@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loader from './Loader';
+import DealerList from './DealerList';
+import DealerMap from './DealerMap';
 
 const App  = () => {
   const [dealers, setDealers] = useState({});
@@ -15,7 +17,7 @@ const App  = () => {
         throw new Error('Network response was not ok.');
       })
       .then(response => {
-        setDealers(response);
+        setDealers(response['data']);
         setLoading(false);
       })
       .catch(() => console.log('An error occurred while fetching the dealers'));
@@ -28,13 +30,8 @@ const App  = () => {
         {
           loading ? <Loader /> : (
             <div className="row">
-              <div className="col-6 border">
-                List
-              </div>
-
-              <div className="col-6 border">
-                Map
-              </div>
+              <DealerList dealers={dealers}/>
+              <DealerMap dealers={dealers}/>
             </div>
           )
         }
