@@ -9,7 +9,10 @@ const DealerList = ({ dealers }) => {
           return (
             <div>
               <a href="#" className="list-group-item list-group-item-action">
-                {dealer.name}
+                {dealer.attributes.name} -
+                {dealer.attributes.account_id} -
+                {dealer.attributes.pos_city} -
+                {dealer.attributes.pos_zip} 
               </a>
             </div>
           )
