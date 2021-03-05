@@ -11,8 +11,8 @@ class CreateDealers < ActiveRecord::Migration[6.0]
       t.string :pos_country
       t.string :pos_state
       t.string :pos_phone
-      t.float :location_latitude, null: false
-      t.float :location_longitude, null: false
+      t.float :location_latitude
+      t.float :location_longitude
 
       t.timestamps
     end

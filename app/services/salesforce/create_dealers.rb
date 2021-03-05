@@ -23,6 +23,10 @@ module Salesforce
       Dealer.create!(dealer_attributes)
     end
 
+    def validate_attributes
+
+    end
+
     def prepare_dealer_attributes(remote_record)
       LOCAL_REMOTE_COLUMN_MAPPINGS.reduce({}) do |memo, (local_col, remote_col)|
         memo[local_col] = remote_record[remote_col]

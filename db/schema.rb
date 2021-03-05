@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2021_03_04_072602) do
     t.string "pos_country"
     t.string "pos_state"
     t.string "pos_phone"
-    t.float "location_latitude", null: false
-    t.float "location_longitude", null: false
+    t.float "location_latitude"
+    t.float "location_longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_dealers_on_account_id", unique: true

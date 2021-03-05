@@ -13,8 +13,6 @@ module Salesforce
     # Following the same  response structure as Restforce gem
     def query(query_string)
       restforce_client.query(query_string)
-    rescue Restforce::AuthenticationError => e
-      build_restforce_collection
     end
 
     private
