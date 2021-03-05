@@ -31,6 +31,10 @@ Frontend
 - Create marker on map for each dealer location by using latitude and longitude
 ![Screenshot](front-end-page.png)
 
+## Pending requirements
+- On click of market highlight list item and vice versa at frontend page
+- Secure map key in frontend
+
 ## System dependencies
 * Ruby version: ruby-2.6.6
 * Rails version: 6.0.3
