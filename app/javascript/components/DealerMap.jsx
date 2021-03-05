@@ -8,7 +8,7 @@ const DealerMap = ({ dealers }) => {
   const [center, setCenter] = useState({lat: 51.1657, lng: 10.4515 });
   const [zoom, setZoom] = useState(6);
   return (
-    <div className="col-lg-6 col-sm-12 border h-25 d-inline-block" key={dealers[0].id}>
+    <div className="col-lg-6 col-sm-12 border h-25 d-inline-block">
       <div style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyABp7WokOVHK6NFGkkeYHlnMPUrXPP2nU0' }}
@@ -21,6 +21,7 @@ const DealerMap = ({ dealers }) => {
                 lat={dealer.attributes.location_latitude}
                 lng={dealer.attributes.location_longitude}
                 dealer={dealer}
+                key={dealer.id}
               />
             )
           })}

@@ -6,6 +6,22 @@ import DealerMap from './DealerMap';
 const App  = () => {
   const [dealers, setDealers] = useState({});
   const [loading, setLoading] = useState(true);
+  const [dealerHighlightStates, setDealerHighlightStates] = useState({});
+
+  const setInitialHighlightState = (dealers) => {
+    let currentStates = {};
+    dealers.forEach((dealer) => {
+      currentStates[dealer.id] = false;
+    });
+
+    setDealerHighlightStates(currentStates);
+  };
+
+  const handleClick = (dealer_id) => {
+    let currentStates = dealerHighlightStates;
+    currentStates[dealer_id] = true;
+    setDealerHighlightStates(currentStates);
+  };
 
   useEffect(() => {
     const url = "/api/v1/dealers";
@@ -19,6 +35,7 @@ const App  = () => {
       .then(response => {
         setDealers(response['data']);
         setLoading(false);
+        setInitialHighlightState(response['data'])
       })
       .catch(() => console.log('An error occurred while fetching the dealers'));
   }, []);
@@ -30,7 +47,7 @@ const App  = () => {
         {
           loading ? <Loader /> : (
             <div className="row">
-              <DealerList dealers={dealers}/>
+              <DealerList dealers={dealers} dealerHighlightStates={dealerHighlightStates} action={handleClick} />
               <DealerMap dealers={dealers}/>
             </div>
           )
