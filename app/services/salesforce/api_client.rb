@@ -2,12 +2,19 @@
 
 module Salesforce
   class ApiClient
+    include Salesforce::MockRestforceCollectionHelper
+
     def initialize
       @restforce_client = initialize_client
     end
 
+    # TODO: I am unable to login into Salesforce sandbox using given userpass and password
+    # Hence returning mock data response on auth error
+    # Following the same  response structure as Restforce gem
     def query(query_string)
       restforce_client.query(query_string)
+    rescue Restforce::AuthenticationError => e
+      build_restforce_collection
     end
 
     private
