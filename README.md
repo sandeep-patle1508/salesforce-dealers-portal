@@ -80,20 +80,6 @@ rails s
 ```
 Visit http://localhost:3000
 
-# Important Note
-I am unable to login using given Salesforce crendentials even after taking help from respective people. 
-- Tried to use given client ID and client secret but no luck
-![Screenshot](console-error.png)
-
-- Tried to login into Salesforce sandbox(test.salesforce.com) to get new client_id and client key but no luck
-![Screenshot](login-error.png)
- 
-Hence I have used dummy Restforce collection data response if API is failing due to auth error.
-Please check: 
-https://github.com/sandeep-patle1508/salesforce-dealers-portal/blob/main/app/services/salesforce/mock_restforce_collection_helper.rb#L11
-
-Response is in same format as used by Restforce gem.
-
 
 
 
