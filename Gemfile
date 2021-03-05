@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Restforce is a ruby gem for the Salesforce REST api.
 gem 'restforce', '~> 5.0.5'
 
+# A lightning fast JSON:API serializer for Ruby Objects
+gem 'fast_jsonapi'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
